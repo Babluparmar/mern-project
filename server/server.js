@@ -3,9 +3,9 @@ const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
 const cookieParser = require("cookie-parser");
+const authRouter = require("./routes/auth/auth-routes");
 
-
-app.use(cors());
+// app.use(cors());
 app.use(express.json());
 app.use(cookieParser());
 app.use(
@@ -20,10 +20,10 @@ app.use(
             "Pragma",            
         ],
         credentials: true
-         
     })
 )
 
+app.use("/api/auth", authRouter);
 
 mongoose.connect('mongodb+srv://bkcxparmar55:IKwHBB8chuw2RNal@cluster0.raqf0.mongodb.net/').then(() => {
     console.log("Connected to MongoDB");
@@ -33,6 +33,6 @@ mongoose.connect('mongodb+srv://bkcxparmar55:IKwHBB8chuw2RNal@cluster0.raqf0.mon
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(() => {
+app.listen(PORT,() => {
     console.log(`Server is running on port ${PORT}`);
 })

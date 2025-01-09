@@ -4,7 +4,7 @@ export const registerFormControls = [
         label: "Name",
         type: "text",
         placeholder: "Enter your name",
-        componenttype: "input",
+        componentType: "input",
         required: true,
     },
     {
@@ -12,7 +12,7 @@ export const registerFormControls = [
         label: "Email",
         type: "email",
         placeholder: "Enter your email",
-        componenttype: "input",
+        componentType: "input",
         required: true,
     },
     {
@@ -20,7 +20,26 @@ export const registerFormControls = [
         label: "Password",
         type: "password",
         placeholder: "Enter your password",
-        componenttype: "input",
+        componentType: "input",
+        required: true,
+    },
+]
+
+export const loginFormControls = [
+    {
+        name: "email",
+        label: "Email",
+        type: "email",
+        placeholder: "Enter your email",
+        componentType: "input",
+        required: true,
+    },
+    {
+        name: "password",
+        label: "Password",
+        type: "password",
+        placeholder: "Enter your password",
+        componentType: "input",
         required: true,
     },
 ]
